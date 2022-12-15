@@ -138,7 +138,7 @@ int main()
 {
 	setlocale(0, "RU");
 	bool isRun = true;
-	vector<string> menuItems{ "Ввод директории", "Выбор директории", "Справка"};
+	vector<string> menuItems{ "Ввод директории", "Выбор директории", "Справка" };
 	string input;
 	while (isRun)
 	{

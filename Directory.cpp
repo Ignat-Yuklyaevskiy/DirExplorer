@@ -55,7 +55,7 @@ vector<string>& Directory::GetDrives()
 
 	for (char drive = 'A'; drive <= 'Z'; drive++)
 	{
-		char c[4]{ drive, ':', '\\', 0};
+		char c[4]{ drive, ':', '\\', 0 };
 		fs::path p(c);
 		if (fs::exists(p))
 			list->push_back(p.string());
@@ -96,15 +96,34 @@ string Directory::GetCurrentPath()
 	return this->path;
 }
 
-double Directory::GetDirectorySize()
+unsigned long long Directory::GetDirectorySize()
 {
-	fs::recursive_directory_iterator it(path);
-	fs::recursive_directory_iterator end;
-	vector<fs::path> allFiles;
-
-	std::copy_if(it, end, std::back_inserter(allFiles), [](const fs::path& path) {
+	stack<fs::path> s;
+	/*std::copy_if(it, end, std::back_inserter(allFiles), [](const fs::path& path) {
 		return !fs::is_directory(path);
-	});
+	});*/
+	/*unsigned long long s = 0;
+	unsigned long long size = std::accumulate(it, end, s, [](unsigned long long size, const fs::path& path) {
+		return size + (!fs::is_directory(path) ? fs::file_size(path) : 0);
+		});
+	*/
+	unsigned long long length = 0;
+	s.push(fs::path(this->path));
+	while (!s.empty())
+	{
+		fs::path p = s.top();
+		s.pop();
+		fs::directory_iterator end;
+		fs::directory_iterator begin(p, fs::directory_options::skip_permission_denied);
+		for (; begin != end; ++begin)
+		{
+			if (!fs::is_directory((*begin)))
+				length += (*begin).file_size();
+			else
+				s.push((*begin));
+		}
 
-	return 0.0;
+	}
+
+	return length;
 }

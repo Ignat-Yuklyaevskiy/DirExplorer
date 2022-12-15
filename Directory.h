@@ -1,7 +1,11 @@
 #include <string>
 #include <filesystem>
 #include <algorithm>
+#include <functional>
+#include <numeric>
 #include <iterator>
+#include <stack>
+
 using namespace std;
 namespace fs = std::filesystem;
 class Directory
@@ -20,6 +24,6 @@ public:
 	bool Forward(int index);
 	bool Backward();
 	string GetCurrentPath();
-	double GetDirectorySize();
+	unsigned long long GetDirectorySize();
 };
 

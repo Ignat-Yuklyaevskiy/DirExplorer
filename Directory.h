@@ -25,5 +25,6 @@ public:
 	bool Backward();
 	string GetCurrentPath();
 	unsigned long long GetDirectorySize();
+	vector<fs::directory_iterator> GetBiggerFiles(unsigned long long size);
 };
 

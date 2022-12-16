@@ -11,7 +11,7 @@ Directory::Directory(std::string path)
 void Directory::UpdatePaths()
 {
 	entries.clear();
-	for (auto& item : fs::directory_iterator(this->path))
+	for (auto& item : fs::directory_iterator(this->path, fs::directory_options::skip_permission_denied))
 		this->entries.push_back(item);
 }
 
@@ -26,7 +26,7 @@ vector<string>& Directory::GetPathsString()
 int Directory::GetFileCount()
 {
 	int count = 0;
-	for (const auto& item : fs::directory_iterator(path))
+	for (const auto& item : fs::directory_iterator(path, fs::directory_options::skip_permission_denied))
 		if (!item.is_directory())
 			count++;
 	return count;
@@ -35,7 +35,7 @@ int Directory::GetFileCount()
 int Directory::GetPathCount()
 {
 	int count = 0;
-	for (const auto& item : fs::directory_iterator(path))
+	for (const auto& item : fs::directory_iterator(path, fs::directory_options::skip_permission_denied))
 		if (item.is_directory())
 			count++;
 	return count;
@@ -44,7 +44,7 @@ int Directory::GetPathCount()
 double Directory::GetFilesSize()
 {
 	double size = 0;
-	for (const auto& item : fs::directory_iterator(path))
+	for (const auto& item : fs::directory_iterator(path, fs::directory_options::skip_permission_denied))
 		size += item.file_size();
 	return size;
 }
@@ -126,4 +126,13 @@ unsigned long long Directory::GetDirectorySize()
 	}
 
 	return length;
+}
+
+vector<fs::directory_iterator> Directory::GetBiggerFiles(unsigned long long size)
+{
+	vector<fs::directory_iterator> files;
+	fs::directory_iterator end;
+	fs::directory_iterator begin(path, fs::directory_options::skip_permission_denied);
+	std::copy_if(begin, end, files.begin(), [](unsigned long long size, const string path) { return fs::file_size(fs::path(path)) > size; });
+	return files;
 }

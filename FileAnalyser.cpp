@@ -88,11 +88,11 @@ void PathHandle(string path)
 			cout << "Размер: " << dir.GetFilesSize() << " байт." << endl;
 			break;
 		case 3:
-			dir.GetDirectorySize();
+			cout << "Размер со вложенными папками - " << dir.GetDirectorySize() << endl;
 			break;
 		case 4: cout << "Введите размер" << endl;
 			cin >> volume;
-
+			dir.GetBiggerFiles(volume);
 			break;
 		case 5:
 			break;

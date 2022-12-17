@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <vector>
 #include "Directory.h"
+#include "File.h"
 
 /**
  *  TODO
@@ -76,7 +77,7 @@ void PathHandle(string path)
 							  "Фильтрация по размеру",  "Фильтрация по дате", "Поиск дубликатов", "Выход" };
 	bool isRun = true;
 	double volume;
-
+	
 	Directory dir(path);
 	while (isRun)
 	{
@@ -117,7 +118,7 @@ void PathHandle(string path)
 }
 
 void DirectoryMenu()
-{
+{   
 	bool isRun = true;
 	Directory dir("");
 	while (isRun)
@@ -138,6 +139,30 @@ void DirectoryMenu()
 			break;
 		}
 	}
+}
+vector<fs::path> SearchDuplicate(string name, unsigned long long size)
+{
+	vector<vector<fs::path>> duplicates;
+	set<File> setfile;
+	vector<fs::path>* files = new vector<fs::path>();
+	stack<fs::path> s;
+	s.push(fs::path(this->path));
+	while (!s.empty())
+	{
+		fs::path p = s.top();
+		s.pop();
+		fs::directory_iterator end;
+		fs::directory_iterator begin(p, fs::directory_options::skip_permission_denied);
+		for (; begin != end; ++begin)
+		{
+			if (!(*begin).is_directory() && (*begin).file_size() > size)
+				files->push_back(*begin);
+			else
+				s.push((*begin));
+		}
+	}
+	
+		return ;
 }
 
 int main()

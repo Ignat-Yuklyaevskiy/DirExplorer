@@ -26,5 +26,6 @@ public:
 	string GetCurrentPath();
 	unsigned long long GetDirectorySize();
 	vector<fs::path>& GetBiggerFiles(unsigned long long size);
+	vector<vector<fs::path>> SearchDuplicate(string name, unsigned long long size);
 };
 

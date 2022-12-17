@@ -1,4 +1,5 @@
 #include "Directory.h"
+#include "File.h"
 
 Directory::Directory(std::string path)
 {
@@ -153,3 +154,28 @@ vector<fs::path>& Directory::GetBiggerFiles(unsigned long long size = 0)
 
 	return *files;
 }
+vector<vector<fs::path>> Directory::SearchDuplicate(string name, unsigned long long size)
+{
+	vector<vector<fs::path>> duplicates;
+	set<File> setfile;
+	vector<fs::path>* files = new vector<fs::path>();
+	stack<fs::path> s;
+	s.push(fs::path(this->path));
+	while (!s.empty())
+	{
+		fs::path p = s.top();
+		s.pop();
+		fs::directory_iterator end;
+		fs::directory_iterator begin(p, fs::directory_options::skip_permission_denied);
+		for (; begin != end; ++begin)
+		{
+			if (!(*begin).is_directory() && (*begin).file_size() > size)
+				files->push_back(*begin);
+			else
+				s.push((*begin));
+		}
+	}
+
+	return duplicates;
+}
+

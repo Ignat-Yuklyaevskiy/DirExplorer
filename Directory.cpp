@@ -68,7 +68,7 @@ vector<fs::directory_entry>& Directory::GetDrives()
 	return *list;
 }
 
-bool Directory::Forward(int index)
+void Directory::Forward(int index)
 {
 	if (index >= 0 && index < entries.size())
 	{
@@ -76,13 +76,12 @@ bool Directory::Forward(int index)
 		{
 			path = entries[index].path().string();
 			UpdatePaths();
-			return true;
 		}
 	}
-	return false;
+	// TODO: Исклчюение индекс вне диапазона
 }
 
-bool Directory::Backward()
+void Directory::Backward()
 {
 	fs::path p = fs::path(this->path);
 	if (p.has_parent_path() && p.parent_path().string() != this->path)
@@ -90,8 +89,6 @@ bool Directory::Backward()
 	else
 		this->path = "";
 	UpdatePaths();
-	// TODO: убрать
-	return true;
 }
 
 string Directory::GetCurrentPath()
@@ -101,16 +98,6 @@ string Directory::GetCurrentPath()
 
 unsigned long long Directory::GetDirectorySize()
 {
-	/*std::copy_if(it, end, std::back_inserter(allFiles), [](const fs::path& path) {
-		return !fs::is_directory(path);
-	});*/
-	/*fs::recursive_directory_iterator end;
-	fs::recursive_directory_iterator begin(path, fs::directory_options::skip_permission_denied);
-	unsigned long long s = 0;
-	unsigned long long size = std::accumulate(begin, end, s, [](unsigned long long size, const fs::path& path) {
-		return size + (!fs::is_directory(path) ? fs::file_size(path) : 0);
-		});*/
-
 	unsigned long long length = 0;
 	stack<fs::path> s;
 	s.push(fs::path(this->path));
@@ -145,8 +132,11 @@ vector<fs::path>& Directory::GetBiggerFiles(unsigned long long size = 0)
 		fs::directory_iterator begin(p, fs::directory_options::skip_permission_denied);
 		for (; begin != end; ++begin)
 		{
-			if (!(*begin).is_directory() && (*begin).file_size() > size)
-				files->push_back(*begin);
+			if (!(*begin).is_directory())
+			{
+				if ((*begin).file_size() > size)
+					files->push_back(*begin);
+			}
 			else
 				s.push((*begin));
 		}

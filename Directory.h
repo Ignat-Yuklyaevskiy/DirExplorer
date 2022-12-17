@@ -21,8 +21,8 @@ public:
 	int GetFileCount();
 	int GetPathCount();
 	double GetFilesSize();
-	bool Forward(int index);
-	bool Backward();
+	void Forward(int index);
+	void Backward();
 	string GetCurrentPath();
 	unsigned long long GetDirectorySize();
 	vector<fs::path>& GetBiggerFiles(unsigned long long size);

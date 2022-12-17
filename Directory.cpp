@@ -2,24 +2,27 @@
 
 Directory::Directory(std::string path)
 {
-	if (!fs::exists(path))
-		throw new exception("Ошибка директории");
 	this->path = path;
+	if (path.size() != 0 && !fs::exists(path))
+		throw new exception("Ошибка директории");
 	UpdatePaths();
 }
 
 void Directory::UpdatePaths()
 {
 	entries.clear();
-	for (auto& item : fs::directory_iterator(this->path, fs::directory_options::skip_permission_denied))
-		this->entries.push_back(item);
+	if (path == "")
+		this->entries = GetDrives();
+	else
+		for (auto& item : fs::directory_iterator(this->path, fs::directory_options::skip_permission_denied))
+			this->entries.push_back(item);
 }
 
 vector<string>& Directory::GetPathsString()
 {
 	vector<string>* list = new vector<string>();
 	for (auto& item : this->entries)
-		list->push_back(item.path().filename().string());
+		list->push_back(path.size() == 0 ? item.path().string() : item.path().filename().string());
 	return *list;
 }
 
@@ -49,16 +52,16 @@ double Directory::GetFilesSize()
 	return size;
 }
 
-vector<string>& Directory::GetDrives()
+vector<fs::directory_entry>& Directory::GetDrives()
 {
-	vector<string>* list = new vector<string>();
+	vector<fs::directory_entry>* list = new vector<fs::directory_entry>();
 
 	for (char drive = 'A'; drive <= 'Z'; drive++)
 	{
 		char c[4]{ drive, ':', '\\', 0 };
 		fs::path p(c);
 		if (fs::exists(p))
-			list->push_back(p.string());
+			list->push_back(fs::directory_entry(p));
 	}
 
 	return *list;
@@ -74,7 +77,6 @@ bool Directory::Forward(int index)
 			UpdatePaths();
 			return true;
 		}
-
 	}
 	return false;
 }
@@ -82,13 +84,13 @@ bool Directory::Forward(int index)
 bool Directory::Backward()
 {
 	fs::path p = fs::path(this->path);
-	if (p.has_parent_path())
-	{
+	if (p.has_parent_path() && p.parent_path().string() != this->path)
 		this->path = p.parent_path().string();
-		UpdatePaths();
-		return true;
-	}
-	return false;
+	else
+		this->path = "";
+	UpdatePaths();
+	// TODO: убрать
+	return true;
 }
 
 string Directory::GetCurrentPath()
@@ -98,16 +100,18 @@ string Directory::GetCurrentPath()
 
 unsigned long long Directory::GetDirectorySize()
 {
-	stack<fs::path> s;
 	/*std::copy_if(it, end, std::back_inserter(allFiles), [](const fs::path& path) {
 		return !fs::is_directory(path);
 	});*/
-	/*unsigned long long s = 0;
-	unsigned long long size = std::accumulate(it, end, s, [](unsigned long long size, const fs::path& path) {
+	/*fs::recursive_directory_iterator end;
+	fs::recursive_directory_iterator begin(path, fs::directory_options::skip_permission_denied);
+	unsigned long long s = 0;
+	unsigned long long size = std::accumulate(begin, end, s, [](unsigned long long size, const fs::path& path) {
 		return size + (!fs::is_directory(path) ? fs::file_size(path) : 0);
-		});
-	*/
+		});*/
+
 	unsigned long long length = 0;
+	stack<fs::path> s;
 	s.push(fs::path(this->path));
 	while (!s.empty())
 	{
@@ -117,22 +121,35 @@ unsigned long long Directory::GetDirectorySize()
 		fs::directory_iterator begin(p, fs::directory_options::skip_permission_denied);
 		for (; begin != end; ++begin)
 		{
-			if (!fs::is_directory((*begin)))
+			if (!(*begin).is_directory())
 				length += (*begin).file_size();
 			else
 				s.push((*begin));
 		}
-
 	}
 
 	return length;
 }
 
-vector<fs::directory_iterator> Directory::GetBiggerFiles(unsigned long long size)
+vector<fs::path>& Directory::GetBiggerFiles(unsigned long long size = 0)
 {
-	vector<fs::directory_iterator> files;
-	fs::directory_iterator end;
-	fs::directory_iterator begin(path, fs::directory_options::skip_permission_denied);
-	std::copy_if(begin, end, files.begin(), [](unsigned long long size, const string path) { return fs::file_size(fs::path(path)) > size; });
-	return files;
+	vector<fs::path>* files = new vector<fs::path>();
+	stack<fs::path> s;
+	s.push(fs::path(this->path));
+	while (!s.empty())
+	{
+		fs::path p = s.top();
+		s.pop();
+		fs::directory_iterator end;
+		fs::directory_iterator begin(p, fs::directory_options::skip_permission_denied);
+		for (; begin != end; ++begin)
+		{
+			if (!(*begin).is_directory() && (*begin).file_size() > size)
+				files->push_back(*begin);
+			else
+				s.push((*begin));
+		}
+	}
+
+	return *files;
 }

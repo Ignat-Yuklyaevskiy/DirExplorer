@@ -14,8 +14,8 @@ private:
 	std::string path;
 	vector<fs::directory_entry> entries;
 	void UpdatePaths();
+	vector<fs::directory_entry>& GetDrives();
 public:
-	static vector<string>& GetDrives();
 	Directory(std::string path);
 	vector<string>& GetPathsString();
 	int GetFileCount();
@@ -25,6 +25,6 @@ public:
 	bool Backward();
 	string GetCurrentPath();
 	unsigned long long GetDirectorySize();
-	vector<fs::directory_iterator> GetBiggerFiles(unsigned long long size);
+	vector<fs::path>& GetBiggerFiles(unsigned long long size);
 };
 

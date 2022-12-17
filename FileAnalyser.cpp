@@ -5,6 +5,15 @@
 #include <vector>
 #include "Directory.h"
 
+/**
+ *  TODO
+ *  1. Наследование
+ *  2. Исключения
+ *  3. Класс Command ?
+ *  4. Класс Menu (Обычное меню, Меню директорий)
+ *  5. Работа с датой
+ */
+
 void PrintMenu(vector<string> menu, int currentSelect)
 {
 	int count = currentSelect / 25;
@@ -93,6 +102,7 @@ void PathHandle(string path)
 		case 4: cout << "Введите размер" << endl;
 			cin >> volume;
 			dir.GetBiggerFiles(volume);
+			// TODO: Вывод файлов на экран 
 			break;
 		case 5:
 			break;
@@ -109,27 +119,23 @@ void PathHandle(string path)
 void DirectoryMenu()
 {
 	bool isRun = true;
-	vector<string> drives = Directory::GetDrives();
-	pair<int, CommandState> drive = Menu(drives, "Выбор диска");
-	if (!(drive.second == Exit))
+	Directory dir("");
+	while (isRun)
 	{
-		Directory dir(drives[drive.first]);
-		while (isRun)
+		pair<int, CommandState> command = Menu(dir.GetPathsString(), dir.GetCurrentPath());
+		switch (command.second)
 		{
-			pair<int, CommandState> command = Menu(dir.GetPathsString(), dir.GetCurrentPath());
-			switch (command.second)
-			{
-			case Select:
-				dir.Forward(command.first);
-				PathHandle(dir.GetCurrentPath());
-				break;
-			case Forward: dir.Forward(command.first);
-				break;
-			case Backward:dir.Backward();
-				break;
-			case Exit: isRun = false;
-				break;
-			}
+		case Select:
+			dir.Forward(command.first);
+			PathHandle(dir.GetCurrentPath());
+			break;
+		case Forward:
+			dir.Forward(command.first);
+			break;
+		case Backward:dir.Backward();
+			break;
+		case Exit: isRun = false;
+			break;
 		}
 	}
 }

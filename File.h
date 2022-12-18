@@ -6,10 +6,9 @@ class File
 {
 private:
 	fs::path path;
-	
+	unsigned long long size;
 public:
 	File(fs::path path);
-	bool operator< (const File& file);
-	bool operator== (const File& name);
+	friend bool operator< (const File& file1, const File& file2);
 };
 

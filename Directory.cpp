@@ -78,7 +78,7 @@ void Directory::Forward(int index)
 			UpdatePaths();
 		}
 	}
-	// TODO: Исклчюение индекс вне диапазона
+	// TODO: Исключение индекс вне диапазона
 }
 
 void Directory::Backward()
@@ -119,7 +119,7 @@ unsigned long long Directory::GetDirectorySize()
 	return length;
 }
 
-vector<fs::path>& Directory::GetBiggerFiles(unsigned long long size = 0)
+vector<fs::path>& Directory::FilterBySize(unsigned long long size = 0)
 {
 	vector<fs::path>* files = new vector<fs::path>();
 	stack<fs::path> s;
@@ -144,10 +144,35 @@ vector<fs::path>& Directory::GetBiggerFiles(unsigned long long size = 0)
 
 	return *files;
 }
-vector<vector<fs::path>> Directory::SearchDuplicate(string name, unsigned long long size)
+vector<fs::path>& Directory::SearchDuplicates()
 {
-	vector<vector<fs::path>> duplicates;
-	set<File> setfile;
+	vector<fs::path>* duplicates = new vector<fs::path>();
+	set<File> files;
+	stack<fs::path> s;
+	s.push(fs::path(this->path));
+	while (!s.empty())
+	{
+		fs::path p = s.top();
+		s.pop();
+		fs::directory_iterator end;
+		fs::directory_iterator begin(p, fs::directory_options::skip_permission_denied);
+		for (; begin != end; ++begin)
+		{
+			if (!(*begin).is_directory())
+			{
+				if (!files.insert(File((*begin).path())).second)
+					duplicates->push_back((*begin).path());
+			}
+			else
+				s.push((*begin));
+		}
+	}
+
+	return *duplicates;
+}
+
+vector<fs::path>& Directory::FilterByDate(time_t date)
+{
 	vector<fs::path>* files = new vector<fs::path>();
 	stack<fs::path> s;
 	s.push(fs::path(this->path));
@@ -159,13 +184,18 @@ vector<vector<fs::path>> Directory::SearchDuplicate(string name, unsigned long l
 		fs::directory_iterator begin(p, fs::directory_options::skip_permission_denied);
 		for (; begin != end; ++begin)
 		{
-			if (!(*begin).is_directory() && (*begin).file_size() > size)
-				files->push_back(*begin);
+			if (!(*begin).is_directory())
+			{
+				// TODO
+				std::time_t t = chrono::system_clock::to_time_t(chrono::system_clock::now() - (filesystem::file_time_type::clock::now() - (*begin).last_write_time()));
+				if (t >= date)
+					files->push_back((*begin).path());
+			}
 			else
 				s.push((*begin));
 		}
 	}
 
-	return duplicates;
+	return *files;
 }
 

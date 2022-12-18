@@ -143,12 +143,14 @@
   <ItemGroup>
     <ClCompile Include="Directory.cpp" />
     <ClCompile Include="DirectoryMenu.cpp" />
+    <ClCompile Include="File.cpp" />
     <ClCompile Include="FileAnalyser.cpp" />
     <ClCompile Include="TextMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Directory.h" />
     <ClInclude Include="DirectoryMenu.h" />
+    <ClInclude Include="File.h" />
     <ClInclude Include="TextMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

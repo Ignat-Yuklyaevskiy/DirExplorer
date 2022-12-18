@@ -1,0 +1,158 @@
+2022-12-18 23:22:03.8708674,C:\Users\aboev\Desktop,Фильтрация по размеру: 500000.,
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\ИНФ-11 ЕГЭ 2023 КОДИФ.pdf	629751
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\ИНФ-11 ЕГЭ 2023_ДЕМО.pdf	731793
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\Доп.файлы\Задание 27\27_B.txt	13107062
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\Доп.файлы\Задание 24\24.txt	4935115
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\Доп.файлы\Задание 10\10.doc	514560
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\Доп.файлы\Задание 10\10.rtf	890462
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (10).pdf	535098
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (11).pdf	542908
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (13).pdf	681506
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (14).pdf	518215
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (19).pdf	744579
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (2).pdf	790034
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (22).pdf	795904
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (23).pdf	805326
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (25).pdf	563617
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (27).pdf	1157486
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (30).pdf	767932
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (32).pdf	541039
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (35).pdf	656271
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (38).pdf	846594
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (4).pdf	753811
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (43).pdf	1031270
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (45).pdf	507292
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (48).pdf	593701
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (50).pdf	567748
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (60).pdf	598845
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (62).pdf	837773
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (64).pdf	615461
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (65).pdf	823114
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (67).pdf	531197
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (69).pdf	986527
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (71).pdf	1146886
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (72).pdf	804250
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (8).pdf	729398
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report.pdf	833588
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\package-lock.json	1111310
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.package-lock.json	614814
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\lib.dom.d.ts	787435
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\tsc.js	5756533
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\tsserver.js	10626941
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\tsserverlibrary.d.ts	613778
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\tsserverlibrary.js	10579575
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\typescript.js	9961346
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\typescriptServices.js	9961353
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\typingsInstaller.js	7473479
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\terser\dist\bundle.min.js	905105
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\tailwindcss\peers\index.js	3414168
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\rollup\dist\rollup.browser.js.map	1512707
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\rollup\dist\shared\rollup.js	880503
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\rollup\dist\es\shared\rollup.js	878913
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\react-dom\umd\react-dom.development.js	940093
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\react-dom\cjs\react-dom.development.js	894563
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\postcss-svgo\node_modules\svgo\dist\svgo.browser.js	587155
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\lodash\lodash.js	544098
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\language-subtag-registry\data\json\registry.json	1090103
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\axe-core\axe.js	938060
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.pure.umd.js	557535
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.pure.umd.js.map	1101852
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.pure.umd.min.js.map	797670
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.umd.js	558395
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.umd.js.map	1103174
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.umd.min.js.map	798765
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\dom\dist\@testing-library\dom.umd.js.map	795393
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\dom\dist\@testing-library\dom.umd.min.js.map	575881
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@babel\parser\lib\index.js.map	1189479
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\0.pack	1081218
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\1.pack	1171619
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\10.pack	36775836
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\12.pack	12075729
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\2.pack	531780
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\5.pack	12034504
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\6.pack	1368704
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\index.pack	2908826
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\index.pack.old	2908825
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\babel-loader\073fbe3971bd666b1b20c2368f2c6437.json	2619756
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\babel-loader\b570b9da0a41a89ac5ca30f2d1f5b208.json	2619768
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\babel-loader\d65c5a36cc2b4471ad42bae646f172fa.json	2619732
+
+2022-12-18 23:27:34.0580824,C:\Users\aboev\Desktop,Фильтрация по размеру: 500000.,
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\ИНФ-11 ЕГЭ 2023 КОДИФ.pdf	629751
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\ИНФ-11 ЕГЭ 2023_ДЕМО.pdf	731793
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\Доп.файлы\Задание 27\27_B.txt	13107062
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\Доп.файлы\Задание 24\24.txt	4935115
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\Доп.файлы\Задание 10\10.doc	514560
+C:\Users\aboev\Desktop\Пробник ЕГЭ №1\inf_11_2023\Доп.файлы\Задание 10\10.rtf	890462
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (10).pdf	535098
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (11).pdf	542908
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (13).pdf	681506
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (14).pdf	518215
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (19).pdf	744579
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (2).pdf	790034
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (22).pdf	795904
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (23).pdf	805326
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (25).pdf	563617
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (27).pdf	1157486
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (30).pdf	767932
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (32).pdf	541039
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (35).pdf	656271
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (38).pdf	846594
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (4).pdf	753811
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (43).pdf	1031270
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (45).pdf	507292
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (48).pdf	593701
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (50).pdf	567748
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (60).pdf	598845
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (62).pdf	837773
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (64).pdf	615461
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (65).pdf	823114
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (67).pdf	531197
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (69).pdf	986527
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (71).pdf	1146886
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (72).pdf	804250
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report (8).pdf	729398
+C:\Users\aboev\Desktop\Patterns\DesignPatterns_Report.pdf	833588
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\package-lock.json	1111310
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.package-lock.json	614814
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\lib.dom.d.ts	787435
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\tsc.js	5756533
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\tsserver.js	10626941
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\tsserverlibrary.d.ts	613778
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\tsserverlibrary.js	10579575
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\typescript.js	9961346
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\typescriptServices.js	9961353
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\typescript\lib\typingsInstaller.js	7473479
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\terser\dist\bundle.min.js	905105
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\tailwindcss\peers\index.js	3414168
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\rollup\dist\rollup.browser.js.map	1512707
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\rollup\dist\shared\rollup.js	880503
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\rollup\dist\es\shared\rollup.js	878913
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\react-dom\umd\react-dom.development.js	940093
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\react-dom\cjs\react-dom.development.js	894563
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\postcss-svgo\node_modules\svgo\dist\svgo.browser.js	587155
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\lodash\lodash.js	544098
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\language-subtag-registry\data\json\registry.json	1090103
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\axe-core\axe.js	938060
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.pure.umd.js	557535
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.pure.umd.js.map	1101852
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.pure.umd.min.js.map	797670
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.umd.js	558395
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.umd.js.map	1103174
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\react\dist\@testing-library\react.umd.min.js.map	798765
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\dom\dist\@testing-library\dom.umd.js.map	795393
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@testing-library\dom\dist\@testing-library\dom.umd.min.js.map	575881
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\@babel\parser\lib\index.js.map	1189479
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\0.pack	1081218
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\1.pack	1171619
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\10.pack	36775836
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\12.pack	12075729
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\2.pack	531780
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\5.pack	12034504
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\6.pack	1368704
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\index.pack	2908826
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\default-development\index.pack.old	2908825
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\babel-loader\073fbe3971bd666b1b20c2368f2c6437.json	2619756
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\babel-loader\b570b9da0a41a89ac5ca30f2d1f5b208.json	2619768
+C:\Users\aboev\Desktop\Assignment1\Rest-Inn\node_modules\.cache\babel-loader\d65c5a36cc2b4471ad42bae646f172fa.json	2619732
+2022-12-18 23:28:10.5226067,C:\Program Files\Android\jdk,Количество диркторий,1

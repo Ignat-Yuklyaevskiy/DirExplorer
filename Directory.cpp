@@ -186,7 +186,6 @@ vector<fs::path>& Directory::FilterByDate(time_t date)
 		{
 			if (!(*begin).is_directory())
 			{
-				// TODO
 				std::time_t t = chrono::system_clock::to_time_t(chrono::system_clock::now() - (filesystem::file_time_type::clock::now() - (*begin).last_write_time()));
 				if (t >= date)
 					files->push_back((*begin).path());

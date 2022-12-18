@@ -2,8 +2,8 @@
 #include "TextMenu.h"
 #include "Directory.h"
 #include <stdio.h>
-#include <locale.h>
 #include <time.h>
+#include "Logger.h"
 
 
 

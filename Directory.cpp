@@ -5,7 +5,7 @@ Directory::Directory(std::string path)
 {
 	this->path = path;
 	if (path.size() != 0 && !fs::exists(path))
-		throw new exception("Ошибка директории");
+		throw exception("Ошибка директории");
 	UpdatePaths();
 }
 

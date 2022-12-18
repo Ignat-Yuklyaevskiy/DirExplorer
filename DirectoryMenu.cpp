@@ -5,12 +5,41 @@ DirectoryMenu::DirectoryMenu(Directory* dir) : TextMenu(dir->GetPathsString(), d
 	this->dir = dir;
 }
 
+bool DirectoryMenu::isLeap(int year)
+{
+	return (((year % 4 == 0) &&
+		(year % 100 != 0)) ||
+		(year % 400 == 0));
+}
+
+bool DirectoryMenu::isValidDate(int d, int m, int y)
+{
+	if (y > 3000 ||	y < 1900)
+		return false;
+	if (m < 1 || m > 12)
+		return false;
+	if (d < 1 || d > 31)
+		return false;
+	if (m == 2)
+	{
+		if (isLeap(y))
+			return (d <= 29);
+		else
+			return (d <= 28);
+	}
+	if (m == 4 || m == 6 ||
+		m == 9 || m == 11)
+		return (d <= 30);
+
+	return true;
+}
+
 void DirectoryMenu::PathHandle()
 {
 	vector<string> menuItems{ "Кол-во файлов", "Кол-во директорий", "Размер", "Размер(rec)",
 						  "Фильтрация по размеру",  "Фильтрация по дате", "Поиск дубликатов", "Выход" };
 	bool isRun = true;
-	int volume;
+	int volume = 0;
 	int dd, mm, yyyy;
 	string input;
 	time_t t;
@@ -22,50 +51,70 @@ void DirectoryMenu::PathHandle()
 		{
 			break;
 		}
-		switch (command.first)
+		try
 		{
-		case 0:
-			cout << "Кол-во файлов: " << dir->GetFileCount() << endl;
-			break;
-		case 1:
-			cout << "Кол-во директорий: " << dir->GetPathCount() << endl;
-			break;
-		case 2:
-			cout << "Размер: " << dir->GetFilesSize() << " байт." << endl;
-			break;
-		case 3:
-			cout << "Размер со вложенными папками: " << dir->GetDirectorySize() << " байт." << endl;
-			break;
-		case 4:
-			cout << "Введите размер: ";
-			cin >> volume;
-			for (auto item : dir->FilterBySize(volume))
-				cout << item.string() << "\t" << fs::file_size(item) << endl;
-			break;
-		case 5:
-			cout << "Введите дату (dd.mm.yyyy): ";
-			cin >> input;
-			// TODO Exceptions
-			// TODO: Использовать strftime
-			sscanf(input.c_str(), "%d.%d.%d", &tm.tm_mday, &tm.tm_mon, &tm.tm_year);
-			tm.tm_mon--;
-			tm.tm_year -= 1900;
-			tm.tm_isdst = -1;
-			t = mktime(&tm);
-			for (auto item : dir->FilterByDate(t))
+			switch (command.first)
 			{
-				// TODO: Вывод даты изменений?
-				cout << item.string() << endl;
+			case 0:
+				cout << "Кол-во файлов: " << dir->GetFileCount() << endl;
+				break;
+			case 1:
+				cout << "Кол-во директорий: " << dir->GetPathCount() << endl;
+				break;
+			case 2:
+				cout << "Размер: " << dir->GetFilesSize() << " байт." << endl;
+				break;
+			case 3:
+				cout << "Размер со вложенными папками: " << dir->GetDirectorySize() << " байт." << endl;
+				break;
+			case 4:
+				cout << "Введите размер: ";
+				cin >> volume;				
+				if (cin.fail())
+				{
+					cin.clear();
+					cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+					volume = 0;
+					throw exception("Неправильный формат ввода");
+				}
+				for (auto item : dir->FilterBySize(volume))
+					cout << item.string() << "\t" << fs::file_size(item) << endl;
+
+				break;
+			case 5:
+				cout << "Введите дату (dd.mm.yyyy): ";
+				cin >> input;
+				// TODO Exceptions
+				// TODO: Использовать strftime
+				if (sscanf(input.c_str(), "%d.%d.%d", &tm.tm_mday, &tm.tm_mon, &tm.tm_year) < 3)
+					throw exception("Неправильный формат ввода");
+				if (!isValidDate(tm.tm_mday,tm.tm_mon,tm.tm_year))
+				{
+					throw exception("Неправильное значение даты");
+				}
+				tm.tm_mon--;
+				tm.tm_year -= 1900;
+				tm.tm_isdst = -1;
+				t = mktime(&tm);
+				for (auto item : dir->FilterByDate(t))
+				{
+					// TODO: Вывод даты изменений?
+					cout << item.string() << endl;
+				}
+				break;
+			case 6:
+				for (auto item : dir->SearchDuplicates())
+					cout << item.string() << "\t" << fs::file_size(item) << endl;
+				break;
+			case 7:
+				isRun = false;
+				break;
 			}
-			break;
-		case 6:
-			for (auto item : dir->SearchDuplicates())
-				cout << item.string() << "\t" << fs::file_size(item) << endl;
-			break;
-		case 7:
-			isRun = false;
-			break;
 		}
+		catch (std::exception& ex) 
+		{
+			cout << ex.what() << endl;
+ 		}
 		system("PAUSE");
 	}
 }
@@ -76,6 +125,7 @@ void DirectoryMenu::Start()
 	while (isRun)
 	{
 		pair<int, CommandState> command = TextMenu(this->dir->GetPathsString(), this->dir->GetCurrentPath()).Start();
+		
 		switch (command.second)
 		{
 		case Select:

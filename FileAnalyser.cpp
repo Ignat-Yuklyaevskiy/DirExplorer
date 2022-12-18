@@ -22,24 +22,31 @@ int main()
 		pair<int, CommandState> command = TextMenu(menuItems, "Главное меню").Start();
 		if (command.second == Exit)
 			break;
-		switch (command.first)
+		try {
+			switch (command.first)
+			{
+			case 0:
+				cout << ">";
+				getline(std::cin, input);
+				DirectoryMenu(new Directory(input)).PathHandle();
+				break;
+			case 1:
+				DirectoryMenu(new Directory("")).Start();
+				break;
+			case 2:
+				cout << "Right    - переход в директорию" << endl;
+				cout << "Left     - выход из директории" << endl;
+				cout << "Up, Down - перемещение по меню" << endl;
+				cout << "Enter    - выбор директории для анализа" << endl;
+				cout << "Esc      - возврат в предыдущее меню" << endl;
+				std::system("PAUSE");
+				break;
+			}
+		}
+		catch (std::exception& ex)
 		{
-		case 0:
-			cout << ">";
-			getline(std::cin, input);
-			DirectoryMenu(new Directory(input)).PathHandle();
-			break;
-		case 1:
-			DirectoryMenu(new Directory("")).Start();
-			break;
-		case 2:
-			cout << "Right    - переход в директорию" << endl;
-			cout << "Left     - выход из директории" << endl;
-			cout << "Up, Down - перемещение по меню" << endl;
-			cout << "Enter    - выбор директории для анализа" << endl;
-			cout << "Esc      - возврат в предыдущее меню" << endl;
+			cout << ex.what() << endl;
 			std::system("PAUSE");
-			break;
 		}
 	}
 

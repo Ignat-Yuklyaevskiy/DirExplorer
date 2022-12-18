@@ -6,11 +6,14 @@
 #include <time.h>
 
 
+
 class DirectoryMenu :
 	public TextMenu
 {
 private:
 	Directory* dir;
+	bool isLeap(int year);
+	bool isValidDate(int d, int m, int y);
 public:
 	void PathHandle();
 	DirectoryMenu(Directory* dir);
